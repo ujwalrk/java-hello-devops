@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<project name="hellodevops" default="compile" basedir=".">
+    <target name="compile">
+        <javac srcdir="." destdir="." includeantruntime="false"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar destfile="hellodevops.jar" basedir="." includes="hellodevops.class"/>
+    </target>
+
+    <target name="run" depends="jar">
+        <java jar="hellodevops.jar" fork="true"/>
+    </target>
+</project>
