@@ -5,7 +5,11 @@
     </target>
 
     <target name="jar" depends="compile">
-        <jar destfile="hellodevops.jar" basedir="." includes="hellodevops.class"/>
+        <jar destfile="hellodevops.jar" basedir="." includes="hellodevops.class">
+            <manifest>
+                <attribute name="Main-Class" value="hellodevops"/>
+            </manifest>
+        </jar>
     </target>
 
     <target name="run" depends="jar">
